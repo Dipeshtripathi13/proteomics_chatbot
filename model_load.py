@@ -97,9 +97,11 @@ def extract_protein_name(query_from_user):
     """
     query_first = f"""The provided sentence is "{query_from_user}". Extract the protein name from the given.
     Note: only give the protein name, only one word for the protein name, and do not give any other words in the response."""
-    
+    print(query_first)
     response = llm.invoke(query_first)
+    print(response)
     protein_name = response.strip()
+    print(protein_name)
     return protein_name
 
 # Function to fetch protein data from UniProt API
