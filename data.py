@@ -3,7 +3,7 @@ import csv
 import json
 
 # Step 1: Fetch the JSON response
-api_url = "https://rest.uniprot.org/uniprotkb/search?query=*&size=5&format=json"
+api_url = "https://rest.uniprot.org/uniprotkb/search?query=*&size=20&format=json"
 response = requests.get(api_url)
 if response.status_code != 200:
     raise Exception(f"API request failed with status code {response.status_code}")

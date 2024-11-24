@@ -16,9 +16,7 @@ fields = [
     "organism",
     "proteinExistence",
     "proteinDescription",
-    "genes",
-    "Functions",
-    "Miscellaneous"
+    "genes"
 ]
 
 # Concatenate fields with their names

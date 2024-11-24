@@ -37,7 +37,7 @@ user_query = "Give me the information of the following protein: A0A0C5B5G6"
 # keywords = extract_protein_name(user_query)
 
 keywords = """
-primaryAccession: A0A1B0GTW7 | secondaryAccessions: ["A0A2R8Y3T5"] 
+primaryAccession: A0JNW5 | secondaryAccessions: ["A0PJE5", "O75183", "Q8NDL1", "Q96C30", "Q9BTS5", "Q9H0F1"]
 """
 # Step 1: Load the SentenceTransformer model
 model = SentenceTransformer("all-MiniLM-L6-v2")
@@ -49,7 +49,7 @@ query_vector = model.encode([keywords])
 index = faiss.read_index("protein_vectors.index")
 
 # Search FAISS for the closest match
-distances, indices = index.search(np.array(query_vector), k=5)
+distances, indices = index.search(np.array(query_vector), k=3)
 
 # # Retrieve the corresponding concatenated row
 # if len(indices) > 0 and indices[0][0] < len(vectorizer.concatenated_rows):
@@ -61,7 +61,7 @@ distances, indices = index.search(np.array(query_vector), k=5)
 # Step 5: Retrieve the most relevant rows using the indices
 if len(indices) > 0:
     print("Top 3 Matching Rows and Their Scores:")
-    for i in range(5):
+    for i in range(3):
         idx = indices[0][i]
         distance = distances[0][i]
         # Retrieve the corresponding concatenated row from the list
