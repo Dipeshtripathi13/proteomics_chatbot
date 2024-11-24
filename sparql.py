@@ -16,19 +16,19 @@ WHERE
 
 # Define headers and parameters for the request
 headers = {
-    "Accept": "application/json"  # Request results in JSON format
+    "Accept": "application/json"  
 }
 params = {
-    "query": sparql_query,  # The SPARQL query
-    "format": "json"        # Desired response format
+    "query": sparql_query,  
+    "format": "json"       
 }
 
-# Send the GET request
+
 response = requests.get(endpoint_url, headers=headers, params=params)
 
-# Check if the request was successful
+
 if response.status_code == 200:
-    # Parse the JSON response
+ 
     results = response.json()
     for result in results["results"]["bindings"]:
         print(result["taxon"]["value"])

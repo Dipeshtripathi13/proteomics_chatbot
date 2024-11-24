@@ -30,8 +30,8 @@ model = SentenceTransformer("all-MiniLM-L6-v2")
 row_vectors = model.encode(concatenated_rows)
 
 dim = row_vectors.shape[1]
-index = faiss.IndexFlatL2(dim)  # Use L2 distance
+index = faiss.IndexFlatL2(dim)
 index.add(np.array(row_vectors))
 
-# Save the index for reuse
+
 faiss.write_index(index, "protein_vectors.index")

@@ -1,16 +1,12 @@
 import requests
 import csv
 import json
-
-# Step 1: Fetch the JSON response
 api_url = "https://rest.uniprot.org/uniprotkb/search?query=*&size=20&format=json"
 response = requests.get(api_url)
 if response.status_code != 200:
     raise Exception(f"API request failed with status code {response.status_code}")
 
 response_json = response.json()
-
-# Step 2: Extract required fields
 def extract_required_fields(entry):
     """
     Extract required fields from a UniProt entry.
@@ -37,11 +33,9 @@ def extract_required_fields(entry):
         ],
     }
 
-# Step 3: Prepare the data for CSV
 entries = response_json.get("results", [])
 data = [extract_required_fields(entry) for entry in entries]
 
-# Step 4: Write to CSV
 csv_file = "uniprot_data.csv"
 with open(csv_file, mode="w", newline="", encoding="utf-8") as file:
     writer = csv.DictWriter(file, fieldnames=[
@@ -59,7 +53,6 @@ with open(csv_file, mode="w", newline="", encoding="utf-8") as file:
     ])
     writer.writeheader()
     for row in data:
-        # Convert complex fields to JSON strings for CSV compatibility
         row["secondaryAccessions"] = json.dumps(row["secondaryAccessions"])
         row["entryAudit"] = json.dumps(row["entryAudit"])
         row["organism"] = json.dumps(row["organism"])

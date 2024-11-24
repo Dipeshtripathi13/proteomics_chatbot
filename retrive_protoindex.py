@@ -2,27 +2,18 @@ import faiss
 import os
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 import pandas as pd
-import vectorize_protobert  # Ensure this contains the encode_prottrans function
+import vectorize_protobert  
 
-# Load the FAISS index created in vectorize_proto.py
+# Load the FAISS index 
 index_path = "protein_vectors1.index"
 index = faiss.read_index(index_path)
 print(f"Loaded FAISS index from {index_path}")
 
-# Load the metadata (original DataFrame)
 data_path = "uniprot_data.csv"
 df = pd.read_csv(data_path)
 print(f"Loaded data from {data_path}")
 
 def retrieve_top_matches(query, k=3):
-    """
-    Retrieve top-k matches for a given query.
-    Args:
-        query (str): Query string.
-        k (int): Number of top matches to retrieve.
-    Returns:
-        list: Top matching rows with scores.
-    """
     # Encode the query using ProtTrans
     print(f"Encoding query: {query}")
     query_vector = vectorize_protobert.encode_prottrans([query], max_length=128)
