@@ -5,7 +5,7 @@ import response_process
 from langchain.memory import ConversationBufferMemory
 
 # Initialize the LLM
-llm = OllamaLLM(model="llama3.1")
+llm = OllamaLLM(model="llama3.2:1b")
 
 # Initialize memory for conversation history
 memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
@@ -13,8 +13,8 @@ memory = ConversationBufferMemory(memory_key="chat_history", return_messages=Tru
 # Function to extract protein name from the user's query
 def extract_protein_name(query_from_user):
   
-    query_first = f"""The provided sentence is "{query_from_user}". Extract the protein name from the given.
-    Note: only give the protein name, only one word for the protein name, and do not give any other words in the response."""
+    query_first = f"""The provided sentence is "{query_from_user}". Extract the protein id from the given sentence.
+    Note: only give the protein ID, only one word for the protein Id, and do not give any other words in the response."""
     print(query_first)
     response = llm.invoke(query_first)
     print(response)
