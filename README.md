@@ -30,8 +30,8 @@ The **Proteomics Chatbot** is an AI-powered application that uses **Llama 3.1** 
 - Ollama
 - -- Download and install Ollama from [here](https://ollama.com/download)
 ```
-ollama pull llama3.1:1b
-ollama run llama3.1:1b
+ollama pull llama3.2:1b
+ollama run llama3.2:1b
 ```
 - Docker (optional for containerization)
 
