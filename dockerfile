@@ -1,17 +1,19 @@
-# Use the official Python image as the base
-FROM python:3.10-slim
 
-# Set the working directory
+FROM python:3.9-slim
+
 WORKDIR /app
 
-# Copy the application files
-COPY . .
+COPY . /app
 
-# Install dependencies
+# Install system dependencies for FAISS and other requirements
+RUN apt-get update && apt-get install -y \
+    libopenblas-dev \
+    libomp-dev \
+    && rm -rf /var/lib/apt/lists/*
+
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Expose the port Streamlit runs on
 EXPOSE 8501
 
-# Command to run the Streamlit app
-CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.enableCORS=false"]
+# Default command to run the Streamlit app
+CMD ["streamlit", "run", "app.py"]

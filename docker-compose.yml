@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  chatbot:
+    build:
+      context: .  
+      dockerfile: Dockerfile
+    container_name: proteomics_chatbot
+    ports:
+      - "8501:8501"  
+    volumes:
+      - .:/app 
+      - ./protein_info_vectors.index:/app/protein_info_vectors.index  
+      - ./protein_vectors1.index:/app/protein_vectors1.index 
+    environment:
+      - STREAMLIT_SERVER_PORT=8501
+      - STREAMLIT_SERVER_HEADLESS=true
+      - STREAMLIT_SERVER_ENABLECORS=false
+      - STREAMLIT_SERVER_FILE_WATCHER_TYPE=none
+    command: streamlit run app.py
