@@ -5,6 +5,22 @@ import model_load
 
 # Initialize the app
 st.title("Proteomics Chatbot")
+st.write(
+    """
+    This chatbot provides information on protein entries from UniProt.
+    You can query using protein names or UniProt primary accession IDs from the first 500 protein entries.
+    """
+)
+
+st.markdown(
+    """
+    ### Instructions:
+    - Use **protein names** or **UniProt primaryAccession IDs** for querying.
+    - Example queries:
+        - `Give me the information about the following protein: Synaptonemal complex central element protein 3`
+        - `Give me the information about the following protein: A0PK11`
+    """
+)
 
 # Initialize chat history
 if "messages" not in st.session_state:
