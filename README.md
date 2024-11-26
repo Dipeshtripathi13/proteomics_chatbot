@@ -79,7 +79,7 @@ proteomics_chatbot/
 ├── get_selected_data.py         # To extract the top 5oo records from the uniport database
 ├── extract_index.py             # To vectorize each of the 500 records using sentence Transfomer
 ├── protein_info_vectors.index   # stored vector index of each of the records
-├── vectorizer.py                # stored vector index of each of the records
+├── vectorizer.py                # Generate vector index of each of the records
 ```
 
 ---
