@@ -118,8 +118,10 @@ Access the chatbot at `http://localhost:8501`.
 ---
 
 ## **Examples**
-![Application Screenshot](assets/images/chatSS1.png "Application Screenshot")
-![Application Screenshot](assets/images/chatSS2.png "Application Screenshot")
+![Application Screenshot](assets/images/UI1.png "Application Screenshot")
+![Application Screenshot](assets/images/UI2.png "Application Screenshot")
+![Application Screenshot](assets/images/UI3.png "Application Screenshot")
+![Application Screenshot](assets/images/UI4.png "Application Screenshot")
 
 ---
 
