@@ -54,15 +54,8 @@ ollama run llama3.2:1b
 ```
 ## **Usage**
 
-### **1. Vectorize Protein Data**
-To encode and index the protein data, run:
-```
-python vectorize_protoindex.py
-```
-This will generate a FAISS index named `protein_vectors1.index`.
-
-### **2. Run the Chatbot**
-Start the Streamlit chatbot application:
+### Run the Chatbot**
+Start the Streamlit chatbot application: (make sure ollama is running)
 ```
 streamlit run app.py
 ```
@@ -117,7 +110,7 @@ Access the chatbot at `http://localhost:8501`.
 
 ---
 
-## **Examples**
+## **Application Screenshot**
 ![Application Screenshot](assets/images/UI1.png "Application Screenshot")
 ![Application Screenshot](assets/images/UI2.png "Application Screenshot")
 ![Application Screenshot](assets/images/UI3.png "Application Screenshot")
