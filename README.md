@@ -28,11 +28,6 @@ The **Proteomics Chatbot** is an AI-powered application that uses **Llama 3.1** 
 ### **1. Prerequisites**
 - Python 3.8 or higher
 - Ollama
-- -- Download and install Ollama from [here](https://ollama.com/download)
-```
-ollama pull llama3.2:1b
-ollama run llama3.2:1b
-```
 - Docker (optional for containerization)
 
 ### **2. Clone the Repository**
@@ -51,7 +46,12 @@ python -m venv .venv
 ```
 pip install -r requirements.txt
 ```
-
+### **5. Install Ollama**
+Download and install Ollama from [here](https://ollama.com/download)
+```
+ollama pull llama3.2:1b
+ollama run llama3.2:1b
+```
 ## **Usage**
 
 ### **1. Vectorize Protein Data**
@@ -83,6 +83,10 @@ proteomics_chatbot/
 ├── uniprot_data.csv             # Protein data file
 ├── response_process.py          # Preprocessing logic for protein data
 ├── Dockerfile                   # Docker containerization instructions
+├── get_selected_data.py         # To extract the top 5oo records from the uniport database
+├── extract_index.py             # To vectorize each of the 500 records using sentence Transfomer
+├── protein_info_vectors.index   # stored vector index of each of the records
+├── vectorizer.py                # stored vector index of each of the records
 ```
 
 ---
