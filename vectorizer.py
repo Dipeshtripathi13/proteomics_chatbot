@@ -4,19 +4,13 @@ import numpy as np
 import faiss
 
 # Load CSV file
-df = pd.read_csv("uniprot_data.csv")
+df = pd.read_csv("proteins_info.csv")
 
 # Fields to include
 fields = [
-    "entryType",
     "primaryAccession",
-    "secondaryAccessions",
     "uniProtkbId",
-    "entryAudit",
-    "organism",
-    "proteinExistence",
     "proteinDescription",
-    "genes"
 ]
 
 # Concatenate fields with their names
@@ -34,4 +28,4 @@ index = faiss.IndexFlatL2(dim)
 index.add(np.array(row_vectors))
 
 
-faiss.write_index(index, "protein_vectors.index")
+faiss.write_index(index, "protein_info_vectors.index")
