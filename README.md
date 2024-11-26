@@ -5,7 +5,7 @@ The **Proteomics Chatbot** is an AI-powered application that uses **Llama 3.1** 
 
 ---
 ## **System Architecture**
-![Proteomics Chatbot System Architecture](assets/images/system_architecture.png "Proteomics Chatbot System Architecture")
+![Proteomics Chatbot System Architecture](assets/images/system_architectures.png "Proteomics Chatbot System Architecture")
 ## **Features**
 - Retrieve protein information by querying the UniProt database.
 - Interactive chatbot interface using **Streamlit**.
