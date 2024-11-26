@@ -16,7 +16,7 @@ global previous_response
 def extract_protein_name(query_from_user):
     # user_query = "Give me the information of the following protein: O14967"
     primary_accession = exteract_index.retrieve_primary_accession(query_from_user)
-    print(f"Primary Accession: {primary_accession}")
+    # print(f"Primary Accession: {primary_accession}")
     if primary_accession == "No match found":
 
         query_first = f"""The provided sentence is "{query_from_user}". Extract only the protein id from the given sentence if present.
@@ -26,7 +26,7 @@ def extract_protein_name(query_from_user):
         """
         print(query_first)
         response = llm.invoke(query_first)
-        print(f"response is {response}")
+        # print(f"response is {response}")
         if response != "No Protin Id found" or response != "NAA" :
             protein_name = response.strip()
             print(f"protin name is {protein_name}")
@@ -35,7 +35,6 @@ def extract_protein_name(query_from_user):
         return protein_name
     else:
         protein_name = primary_accession
-        print(f"else protin name {protein_name}")
         return protein_name
 
 # Function to fetch protein data from UniProt API
