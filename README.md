@@ -32,7 +32,7 @@ The **Proteomics Chatbot** is an AI-powered application that uses **Llama 3.1** 
 
 ### **2. Clone the Repository**
 ```bash
-git clone https://github.com/yourusername/proteomics_chatbot.git
+git clone https://github.com/Dipeshtripathi13/proteomics_chatbot.git
 cd proteomics_chatbot
 ```
 
